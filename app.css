@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #212121;
+    box-sizing: border-box;
+    font-family: 'Electrolize', sans-serif;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "message message"
+        "board board"
+        "panel panel";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 2fr;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.message-panel {
+    align-items: center;
+    background-color: #212121;
+    display: flex;
+    font-size: 2rem;
+    grid-area: message;
+    justify-content: center;
+}
+
+.red-text {
+    color: #d50000;
+}
+
+.yellow-text {
+    color: #ffc400;
+}
+
+.green-text {
+    color: forestgreen;
+}
+
+.game-board-div {
+    align-items: center;
+    background-color: #212121;
+    display: flex;
+    grid-area: board;
+    justify-content: center;
+}
+
+.board {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "G R"
+        "Y B";
+    grid-template-columns: repeat(2, calc(50% - 10px));
+    grid-template-rows: repeat(2, calc(50% - 10px));
+    height: 250px;
+    width: 250px;
+}
+
+
+.green {
+    background-color: #4caf50;
+    border-top: 4px solid #A5D6A7;
+    border-right: 4px solid #1B5E20;
+    border-bottom: 4px solid #1B5E20;
+    border-left: 4px solid #A5D6A7;
+    grid-area: G;
+    transition: background 8s;
+}
+
+.green:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.green.active {
+    box-shadow: 0 0 12px 12px #388e3c;
+}
+
+.red {
+    background-color: #f44336;
+    border-top: 4px solid #EF9A9A;
+    border-right: 4px solid #B71C1C;
+    border-bottom: 4px solid #B71C1C;
+    border-left: 4px solid #EF9A9A;
+    grid-area: R;
+    transition: background 8s;
+
+}
+.red:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.red.active {
+    box-shadow: 0 0 12px 12px #d32f2f;
+}
+
+.yellow {
+    background-color: #ffeb3b;
+    border-top: 4px solid #FFF59D;
+    border-right: 4px solid #F57F17;
+    border-bottom: 4px solid #F57F17;
+    border-left: 4px solid #FFF59D;
+    grid-area: Y;
+    transition: background 8s;
+
+}
+
+.yellow:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.yellow.active {
+    box-shadow: 0 0 12px 12px #fbc02d;
+}
+
+.blue {
+    background-color: #2196f3;
+    border-top: 4px solid #81D4FA;
+    border-right: 4px solid #01579B;
+    border-bottom: 4px solid #01579B;
+    border-left: 4px solid #81D4FA;
+    grid-area: B;
+    transition: background 8s;
+}
+
+.blue:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.blue.active {
+    box-shadow: 0 0 12px 12px #1976d2;
+}
+
+.active {
+    background: radial-gradient(#fff, rgba(255, 255, 255, 0));
+}
+
+.game-panel-div {
+    align-items: center;
+    border-top: 5px solid #424242;
+    color: #b2ff59;
+    display: flex;
+    flex-direction: column;
+    grid-area: panel;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+
+.score-display {
+    display: flex;
+    justify-content: space-between;
+    max-width: 275px;
+    width: 75%;
+}
+
+.play-button {
+    color: #33691e;
+    background-color: transparent;
+    border: 3px solid #33691e;
+    border-radius: 2rem;
+    letter-spacing: .1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: .6rem 1.5rem;
+}
+
+.play-button:hover {
+    background-color: #4caf50;
+    color: white;
+}
+
+
+
+@media (min-width: 560px) and (orientation: landscape) {
+    .container {
+        grid-template-areas:
+            "message message panel"
+            "board board panel"
+            "board board panel";
+        grid-template-rows: 1fr 3fr 3fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 700px) and (orientation: portrait) {
+    .board {
+        height: 400px;
+        width: 400px;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .board {
+        height: 400px;
+        width: 400px;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+}
+
