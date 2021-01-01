@@ -4,8 +4,8 @@ const MESSAGE = document.querySelector(".message");
 const CURRENT_SCORE = document.querySelector(".current-score");
 const HIGH_SCORE = document.querySelector(".high-score");
 
-let buttonsDisabled = false;
-let isGameOver = false;
+let buttonsDisabled = true;
+let isGameOver = true;
 let currentPattern = [];
 let currentIndex = 0;
 let currentScore = 0;
