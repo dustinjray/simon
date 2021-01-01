@@ -3,10 +3,9 @@ const PLAY_BUTTON = document.querySelector(".play-button");
 const MESSAGE = document.querySelector(".message");
 const CURRENT_SCORE = document.querySelector(".current-score");
 const HIGH_SCORE = document.querySelector(".high-score");
-const ICON = document.querySelector(".icon");
 
-let buttonsDisabled = true;
-let isGameOver = true;
+let buttonsDisabled = false;
+let isGameOver = false;
 let currentPattern = [];
 let currentIndex = 0;
 let currentScore = 0;
@@ -35,6 +34,25 @@ PLAY_BUTTON.addEventListener("click", () => {
 
 function lightButton(button) {
     button.classList.toggle("active");
+    let audio;
+    switch (button) {
+        case GAME_BUTTONS[0]:
+            audio = new Audio("assets/e5.mp3"); //green
+            audio.play();
+            break;
+        case GAME_BUTTONS[1]:
+            audio = new Audio("assets/cSharp.mp3"); //red
+            audio.play();
+            break;
+        case GAME_BUTTONS[2]:
+            audio = new Audio("assets/a4.mp3"); //yellow
+            audio.play();
+            break;
+        case GAME_BUTTONS[3]:
+            audio = new Audio("assets/e4.mp3"); //blue
+            audio.play();
+            break;
+    }
     sleep(350)
         .then(() => {
             button.classList.toggle("active");
@@ -103,7 +121,7 @@ function checkAnswer(buttonPressed) {
 async function playPattern() {
     for (let index of currentPattern) {
         await lightButton(GAME_BUTTONS[index]);
-        await sleep(500);
+        await sleep(700);
     }
 }
 
