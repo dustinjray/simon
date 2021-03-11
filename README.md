@@ -1,7 +1,10 @@
-#About
+# Simon
+[Play the Game](https://dustinjray.github.io/simon)
+##Inspiration
+I was following along with Angela Yu's [Web Development Bootcamp](https://www.udemy.com/course/the-complete-web-development-bootcamp/) and saw that an upcoming project was to create a JavaScript Simon game. Being familiar with the game, I decided to step away from the course to see if I could create it on my own, without explicit direction, first. This is the result.
 
-I was following along with Angela Yu's "Complete 2020 Web Development Bootcamp" on Udemy and I saw that one of the upcoming projects was to create a Simon game. Being familiar with the game I decided to stop the course at that point and create it on my own first. This is the result.
+## About
+I think the biggest takeaway from this project, for me, was learning about using async and await to properly delay executions of functions so that the sequence would play at a reasonable speed, and the program wouldn't get ahead of itself. 
 
-In terms of style, it took me a couple of versions to get something that I liked and looked decent across several different device types. It could definitely still be improved, but it doesn't look horrible and the main thing I was testing myself on was getting the logic of the game working correctly, so I'm going to call this one done. 
 
-Please find the playable version of the game at: http://dustinjray.github.io/simon
+
